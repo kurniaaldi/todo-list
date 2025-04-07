@@ -1,3 +1,5 @@
+![screencapture-localhost-3000-2025-04-07-20_33_55](https://github.com/user-attachments/assets/67ade5a0-4873-47dd-a6ed-d4650aa86f52)
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
