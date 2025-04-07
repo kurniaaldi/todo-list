@@ -16,6 +16,7 @@ const TodoItem = ({ todo }: Props) => {
   const [title, setTitle] = useState(todo.title);
   const [description, setDescription] = useState(todo.description || "");
   const [category, setCategory] = useState(todo.category);
+  console.log(todo);
 
   const handleToggle = () => {
     dispatch(toggleTodo(todo.id));
@@ -51,20 +52,20 @@ const TodoItem = ({ todo }: Props) => {
             <input
               value={title}
               onChange={(e) => setTitle(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-600 rounded text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Title"
             />
             <input
               value={category}
               onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full px-3 py-2 border border-gray-600 rounded text-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               placeholder="Category"
             />
           </div>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full px-3 py-2 border border-gray-600 rounded text-gray-600 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Description"
             rows={2}
           />
@@ -86,17 +87,22 @@ const TodoItem = ({ todo }: Props) => {
       ) : (
         <div className="flex justify-between items-start space-x-4">
           <div className="flex-1">
+            <span className="inline-block mt-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
+              {todo.category}
+            </span>
+            {todo.completed && (
+              <span className="inline-block mt-2 text-xs bg-green-200 text-green-600 mx-2 px-2 py-1 rounded">
+                Done
+              </span>
+            )}
             <h3
-              className={`text-lg font-semibold ${
-                todo.completed ? "line-through text-gray-400" : ""
+              className={`text-lg font-semibold text-gray-900 ${
+                todo.completed ? "line-through" : ""
               }`}
             >
               {todo.title}
             </h3>
             <p className="text-sm text-gray-600">{todo.description}</p>
-            <span className="inline-block mt-2 text-xs bg-blue-100 text-blue-600 px-2 py-1 rounded">
-              {todo.category}
-            </span>
           </div>
           <div className="space-y-2 flex flex-col items-end">
             <button

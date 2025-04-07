@@ -20,18 +20,18 @@ const TodoFilter = () => {
         name="status"
         value={filter.status}
         onChange={handleChange}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border border-gray-600 rounded text-gray-600"
       >
         <option value="all">All Status</option>
-        <option value="completed">Completed</option>
-        <option value="incomplete">Incomplete</option>
+        <option value="done">Completed</option>
+        <option value="pending">Incomplete</option>
       </select>
 
       <select
         name="category"
         value={filter.category}
         onChange={handleChange}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border border-gray-600 rounded text-gray-600"
       >
         <option value="all">All Categories</option>
         {categories.map((cat) => (
@@ -46,13 +46,13 @@ const TodoFilter = () => {
         name="keyword"
         value={filter.keyword}
         onChange={handleChange}
-        className="w-full px-3 py-2 border rounded"
+        className="w-full px-3 py-2 border border-gray-600 rounded text-gray-600"
         placeholder="Search todo..."
       />
       <button
         onClick={() => dispatch(fetchTodos())}
         disabled={loading}
-        className="col-span-3 px-4 py-2 text-white rounded bg-indigo-600 hover:bg-indigo-700"
+        className={`col-span-3 px-4 py-2 text-white rounded bg-indigo-600 hover:bg-indigo-700 cursor-pointer`}
       >
         {loading ? "Loading..." : "Load Sample Todos"}
       </button>

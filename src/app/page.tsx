@@ -5,7 +5,7 @@ import { Toaster } from "react-hot-toast";
 
 const App = () => {
   return (
-    <main className="min-h-screen bg-black py-10 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-white py-10 px-4 sm:px-6 lg:px-8">
       <Toaster
         toastOptions={{
           style: {

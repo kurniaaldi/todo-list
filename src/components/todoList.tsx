@@ -30,7 +30,7 @@ const TodoList = () => {
   }
 
   return (
-    <div className="space-y-4">
+    <div className="space-y-4 border p-4">
       {todos.map((todo) => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
